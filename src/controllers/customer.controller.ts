@@ -14,7 +14,7 @@ import { LoginDto, RegDto } from 'src/dto/customer.dto';
 import { CustomerService } from 'src/services/customer.service';
 import { validator } from 'src/utils/validator';
 import { Middleware, UseMiddleware } from 'src/middleware';
-import { Customer } from 'src/entities/customer';
+import { Customer } from 'src/entities/Customer';
 
 @Controller('customer')
 export class CustomerController {
