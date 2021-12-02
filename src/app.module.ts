@@ -4,8 +4,10 @@ import { AppService } from './app.service';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { config } from 'dotenv';
 import { CustomerModule } from './modules/customer.module';
+import { StakeModule } from './modules/stake.module';
 import { Customer } from './entities/Customer';
 import { Wallet } from './entities/Wallet';
+import { Stake } from './entities/Stake';
 
 config();
 
@@ -24,7 +26,7 @@ const dbConfig: TypeOrmModuleOptions = {
   password,
   database,
   type: 'mysql',
-  entities: [Customer, Wallet],
+  entities: [Customer, Wallet, Stake],
   synchronize: true,
 };
 
@@ -33,6 +35,7 @@ const dbConfig: TypeOrmModuleOptions = {
     TypeOrmModule.forRoot(dbConfig),
     TypeOrmModule.forFeature([Customer]),
     CustomerModule,
+    StakeModule,
   ],
   controllers: [AppController],
   providers: [AppService],

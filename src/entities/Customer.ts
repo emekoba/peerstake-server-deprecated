@@ -10,6 +10,7 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { Wallet } from './Wallet';
+import { Stake } from './Stake';
 
 @Entity()
 export class Customer {
@@ -79,4 +80,8 @@ export class Customer {
   @OneToOne(() => Wallet, (wallet) => wallet.customer)
   @JoinColumn()
   wallet?: Wallet;
+
+  @ManyToOne(() => Stake, (stake) => stake.customers)
+  @JoinColumn()
+  stake?: Stake;
 }
