@@ -1,3 +1,6 @@
+"engines": {
+   "node": "14.15.1"
+ },
 {
   "name": "peerstake",
   "version": "0.0.1",
